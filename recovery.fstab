@@ -1,0 +1,921 @@
+#
+# Copyright (C) 2020 ATGDroid <bythedroid@gmail.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+
+#Android fstab file.
+#Created by (https://t.me/ATGDroid)
+#Fri Sep  4 22:12:26 CEST 2020
+#For recovery: TWRP
+#For device: Redmi Note 9 Pro
+#Brand: Redmi
+#Total number of partitions: 85
+#Bootdevice: 1d84000.ufshc
+#Device encryption mode: FBE
+
+#Partition number: 1
+#INFO="unknown"
+#ID="F25D0681-507E-4CA8-AF39-2B6E31821B48"
+#DEFAULT_SIZE_IN_BYTES="106496" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sdd1" DEFAULT_MOUNTPOINT=""
+/ALIGN_TO_128K_1 emmc /dev/block/bootdevice/by-name/ALIGN_TO_128K_1 flags=display="ALIGN_TO_128K_1"
+
+#Partition number: 2
+#INFO="unknown"
+#ID="58812631-0527-48D0-BE7B-952F82F1DF13"
+#DEFAULT_SIZE_IN_BYTES="106496" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sdf1" DEFAULT_MOUNTPOINT=""
+/ALIGN_TO_128K_2 emmc /dev/block/bootdevice/by-name/ALIGN_TO_128K_2 flags=display="ALIGN_TO_128K_2"
+
+#Partition number: 3
+#INFO="(bootloader.img or aboot.mbn file in Factory Firmware) - Applications Bootloader is the main bootloader responsible for loading kernel or recovey and fastboot - a Firmware Update Protocol - as well."
+#ID="05510BCE-96E5-4BF0-8143-DFCE5863D6AC"
+#DEFAULT_SIZE_IN_BYTES="8388608" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde8" DEFAULT_MOUNTPOINT=""
+/abl emmc /dev/block/bootdevice/by-name/abl flags=display="aboot BL"
+
+#Partition number: 4
+#INFO="Backup partition of abl"
+#ID="BB7998E1-7092-42F7-9968-BEEA73FD991F"
+#DEFAULT_SIZE_IN_BYTES="8388608" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde24" DEFAULT_MOUNTPOINT=""
+/ablbak emmc /dev/block/bootdevice/by-name/ablbak flags=display="abl backup"
+
+#Partition number: 5
+#INFO="unknown"
+#ID="5599E612-DAAB-4B97-8109-DD0323A53A7C"
+#DEFAULT_SIZE_IN_BYTES="524288" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde1" DEFAULT_MOUNTPOINT=""
+/aop emmc /dev/block/bootdevice/by-name/aop flags=display="aop"
+
+#Partition number: 6
+#INFO="Backup partition of aop"
+#ID="AB584873-393A-4AF6-85B0-078882D7B975"
+#DEFAULT_SIZE_IN_BYTES="524288" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde17" DEFAULT_MOUNTPOINT=""
+/aopbak emmc /dev/block/bootdevice/by-name/aopbak flags=display="aop backup"
+
+#Partition number: 7
+#INFO="related to debug policies"
+#ID="05F0C1FA-9472-4F2E-A924-B279F7D2CF31"
+#DEFAULT_SIZE_IN_BYTES="262144" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde35" DEFAULT_MOUNTPOINT=""
+/apdp emmc /dev/block/bootdevice/by-name/apdp flags=display="apdp"
+
+#Partition number: 8
+#INFO="bluetooth firmware"
+#ID="15B4738A-1887-423E-95F0-A8F2663624EB"
+#DEFAULT_SIZE_IN_BYTES="1048576" DEFAULT_FORMAT="vfat"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="true"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="true"
+#MMC_BLOCK="/dev/block/sde5" DEFAULT_MOUNTPOINT="/vendor/bt_firmware"
+/bt_firmware vfat /dev/block/bootdevice/by-name/bluetooth flags=display="Bluetooth FW";mounttodecrypt;backup=1
+
+#Partition number: 8 (custom emmc format)
+#INFO="EMMC image of bt_firmware partition"
+#ID="807E0EDD-55AD-42EB-96D2-AD17D4CBAA16"
+#DEFAULT_SIZE_IN_BYTES="1048576" DEFAULT_FORMAT="unknown"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde5" DEFAULT_MOUNTPOINT="unknown"
+/bt_firmware_image emmc /dev/block/bootdevice/by-name/bluetooth flags=display="Bluetooth FW Image";flashimg=1
+
+#Partition number: 9
+#INFO="Backup partition of bluetooth"
+#ID="4FCD8A04-D801-40F0-B8C0-4AB11F1EBC8A"
+#DEFAULT_SIZE_IN_BYTES="1048576" DEFAULT_FORMAT="vfat"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="true"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="true"
+#MMC_BLOCK="/dev/block/sde21" DEFAULT_MOUNTPOINT=""
+/bluetoothbak vfat /dev/block/bootdevice/by-name/bluetoothbak flags=display="bluetooth backup"
+
+#Partition number: 9 (custom emmc format)
+#INFO="EMMC image of bluetoothbak partition"
+#ID="798FFCA0-EC08-4B1E-9379-5198B9EA3E14"
+#DEFAULT_SIZE_IN_BYTES="1048576" DEFAULT_FORMAT="unknown"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde21" DEFAULT_MOUNTPOINT="unknown"
+/bluetoothbak_image emmc /dev/block/bootdevice/by-name/bluetoothbak flags=display="Bluetoothbak Image";flashimg=1
+
+#Partition number: 10
+#INFO="Kernel and initramfs (modern form of of ramdisk and ramfs/tmpfs)"
+#ID="34530AF3-0358-41A5-86EB-719B3866FC99"
+#DEFAULT_SIZE_IN_BYTES="134217728" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde51" DEFAULT_MOUNTPOINT=""
+/boot emmc /dev/block/bootdevice/by-name/boot flags=display="boot";backup=1;flashimg=1
+
+#Partition number: 11
+#INFO="Backup partition of boot"
+#ID="ECF908C4-3AA0-4242-A073-D9FFF5EFCEA7"
+#DEFAULT_SIZE_IN_BYTES="134217728" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde55" DEFAULT_MOUNTPOINT=""
+/bootbak emmc /dev/block/bootdevice/by-name/bootbak flags=display="boot backup"
+
+#Partition number: 12
+#INFO="cached (frequently accessed) data from OS usage and contains the firmware update package downloaded from server during OTA updates"
+#ID="7BD45AA8-2082-4BB6-A3AB-20B729CEEFE3"
+#DEFAULT_SIZE_IN_BYTES="402653184" DEFAULT_FORMAT="ext4"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="true"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="true"
+#MMC_BLOCK="/dev/block/sda13" DEFAULT_MOUNTPOINT="/cache"
+/cache ext4 /dev/block/bootdevice/by-name/cache flags=display="cache"
+
+#Partition number: 12 (custom emmc format)
+#INFO="EMMC image of cache partition"
+#ID="13C09C95-F460-40EE-9526-E457DE6CFB06"
+#DEFAULT_SIZE_IN_BYTES="402653184" DEFAULT_FORMAT="unknown"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda13" DEFAULT_MOUNTPOINT="unknown"
+/cache_image emmc /dev/block/bootdevice/by-name/cache flags=display="Cache Image";flashimg=1
+
+#Partition number: 13
+#INFO="unknown"
+#ID="E7E58925-6D5A-4D58-BB94-5F7150BA328D"
+#DEFAULT_SIZE_IN_BYTES="1048576" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde49" DEFAULT_MOUNTPOINT=""
+/catecontentfv emmc /dev/block/bootdevice/by-name/catecontentfv flags=display="catecontentfv"
+
+#Partition number: 14
+#INFO="unknown"
+#ID="65A9B2F1-ED82-4FAB-BD8A-0D64156C7F21"
+#DEFAULT_SIZE_IN_BYTES="524288" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde48" DEFAULT_MOUNTPOINT=""
+/catefv emmc /dev/block/bootdevice/by-name/catefv flags=display="catefv"
+
+#Partition number: 15
+#INFO="unknown"
+#ID="1FBFC4BD-B612-47C4-8BA1-0662589C6D94"
+#DEFAULT_SIZE_IN_BYTES="2097152" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde41" DEFAULT_MOUNTPOINT=""
+/cateloader emmc /dev/block/bootdevice/by-name/cateloader flags=display="cateloader"
+
+#Partition number: 16
+#INFO="unknown"
+#ID="ABCB3D51-4632-44AE-B92A-C26600668E08"
+#DEFAULT_SIZE_IN_BYTES="131072" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sdd2" DEFAULT_MOUNTPOINT=""
+/cdt emmc /dev/block/bootdevice/by-name/cdt flags=display="cdt"
+
+#Partition number: 17
+#INFO="verified boot"
+#ID="B69D2F7F-25C3-4169-9A28-31CABDB010FE"
+#DEFAULT_SIZE_IN_BYTES="524288" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde11" DEFAULT_MOUNTPOINT=""
+/cmnlib emmc /dev/block/bootdevice/by-name/cmnlib flags=display="cmnlib"
+
+#Partition number: 18
+#INFO="verified boot"
+#ID="DB77138A-AAAE-486A-9B96-CBDB74CB7563"
+#DEFAULT_SIZE_IN_BYTES="524288" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde12" DEFAULT_MOUNTPOINT=""
+/cmnlib64 emmc /dev/block/bootdevice/by-name/cmnlib64 flags=display="cmnlib64"
+
+#Partition number: 19
+#INFO="Backup partition of cmnlib64"
+#ID="448B35B0-06C2-4C2E-95E1-712FE657083F"
+#DEFAULT_SIZE_IN_BYTES="524288" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde28" DEFAULT_MOUNTPOINT=""
+/cmnlib64bak emmc /dev/block/bootdevice/by-name/cmnlib64bak flags=display="cmnlib64 backup"
+
+#Partition number: 20
+#INFO="Backup partition of cmnlib"
+#ID="AAE10E8B-948F-4605-8E12-CD428A67706D"
+#DEFAULT_SIZE_IN_BYTES="524288" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde27" DEFAULT_MOUNTPOINT=""
+/cmnlibbak emmc /dev/block/bootdevice/by-name/cmnlibbak flags=display="cmnlib backup"
+
+#Partition number: 21
+#INFO="used by stock ROM's, holding some preloaded system apps and regional settings which are installed on first use."
+#ID="13C62081-92FA-4E0D-B383-7E497C2ED5EB"
+#DEFAULT_SIZE_IN_BYTES="1073741824" DEFAULT_FORMAT="ext4"
+#DEFAULT_LABEL="cust" CAN_BE_MOUNTED="true"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="true"
+#MMC_BLOCK="/dev/block/sda7" DEFAULT_MOUNTPOINT="/cust"
+/cust ext4 /dev/block/bootdevice/by-name/cust flags=display="cust";backup=1;wipeingui
+
+#Partition number: 21 (custom emmc format)
+#INFO="EMMC image of cust partition"
+#ID="28722B80-7659-4E75-B354-99FFADD53522"
+#DEFAULT_SIZE_IN_BYTES="1073741824" DEFAULT_FORMAT="unknown"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda7" DEFAULT_MOUNTPOINT="unknown"
+/cust_image emmc /dev/block/bootdevice/by-name/cust flags=display="Cust Image";flashimg=1
+
+#Partition number: 22
+#INFO="Double Data Rate RAM"
+#ID="80F0D20D-9520-4958-95E2-800A0C4DE5C7"
+#DEFAULT_SIZE_IN_BYTES="1048576" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sdd3" DEFAULT_MOUNTPOINT=""
+/ddr emmc /dev/block/bootdevice/by-name/ddr flags=display="DDR"
+
+#Partition number: 23
+#INFO="used by TZ for upgrades"
+#ID="F51C4FD0-8113-41B7-9B8A-DB9ED2C42847"
+#DEFAULT_SIZE_IN_BYTES="131072" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde13" DEFAULT_MOUNTPOINT=""
+/devcfg emmc /dev/block/bootdevice/by-name/devcfg flags=display="devcfg"
+
+#Partition number: 24
+#INFO="Backup partition of devcfg"
+#ID="D674B98B-EFC2-42F0-9F7C-0A23D4C68C9E"
+#DEFAULT_SIZE_IN_BYTES="131072" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde29" DEFAULT_MOUNTPOINT=""
+/devcfgbak emmc /dev/block/bootdevice/by-name/devcfgbak flags=display="devcfg backup"
+
+#Partition number: 25
+#INFO="device information including: is_unlocked (aboot), is_tampered, is_verified, charger_screen_enabled, display_panel, bootloader_version, radio_version etc. Contents of this partition are displayed by "fastboot oem device-info" command in human readable format. Before loading boot.img or recovery.img, bootloader verifies the locked state from this partition."
+#ID="E73703D9-BAD5-4410-A11F-A7A9A97D1E06"
+#DEFAULT_SIZE_IN_BYTES="4096" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde33" DEFAULT_MOUNTPOINT=""
+/devinfo emmc /dev/block/bootdevice/by-name/devinfo flags=display="Device Info"
+
+#Partition number: 26
+#INFO="boot verification, use Qualcomm SafeSwitch technology to lock and track theft phones"
+#ID="362FD183-10F0-4129-B601-62AD8B568936"
+#DEFAULT_SIZE_IN_BYTES="1048576" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde34" DEFAULT_MOUNTPOINT=""
+/dip emmc /dev/block/bootdevice/by-name/dip flags=display="dip"
+
+#Partition number: 27
+#INFO="(Digital Signal Processor) - by Qualcomm to assist in things like smooth video playback (realtime media and sensors processor)"
+#ID="7906F56F-3E46-4447-AB8B-22EF54B84676"
+#DEFAULT_SIZE_IN_BYTES="33554432" DEFAULT_FORMAT="ext4"
+#DEFAULT_LABEL="dsp" CAN_BE_MOUNTED="true"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="true"
+#MMC_BLOCK="/dev/block/sde9" DEFAULT_MOUNTPOINT="/vendor/dsp"
+/dsp ext4 /dev/block/bootdevice/by-name/dsp flags=display="Dsp FW";backup=1
+
+#Partition number: 27 (custom emmc format)
+#INFO="EMMC image of dsp partition"
+#ID="CC32DA72-5912-4FF5-BFFF-8F731E1C4987"
+#DEFAULT_SIZE_IN_BYTES="33554432" DEFAULT_FORMAT="unknown"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde9" DEFAULT_MOUNTPOINT="unknown"
+/dsp_image emmc /dev/block/bootdevice/by-name/dsp flags=display="Dsp Image";flashimg=1
+
+#Partition number: 28
+#INFO="Backup partition of dsp"
+#ID="31BA01EA-F516-41BE-93CC-29D8548962C4"
+#DEFAULT_SIZE_IN_BYTES="33554432" DEFAULT_FORMAT="ext4"
+#DEFAULT_LABEL="dsp" CAN_BE_MOUNTED="true"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="true"
+#MMC_BLOCK="/dev/block/sde25" DEFAULT_MOUNTPOINT="/dsp"
+/dsp ext4 /dev/block/bootdevice/by-name/dspbak flags=display="dsp backup"
+
+#Partition number: 28 (custom emmc format)
+#INFO="EMMC image of dsp partition"
+#ID="01A433FC-21C5-4FA3-9360-0F18C292C7BD"
+#DEFAULT_SIZE_IN_BYTES="33554432" DEFAULT_FORMAT="unknown"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde25" DEFAULT_MOUNTPOINT="unknown"
+/dsp_image emmc /dev/block/bootdevice/by-name/dspbak flags=display="Dsp Image";flashimg=1
+
+#Partition number: 29
+#INFO="unknown"
+#ID="2071406C-2156-445D-8C65-5B266A8A822F"
+#DEFAULT_SIZE_IN_BYTES="25165824" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde52" DEFAULT_MOUNTPOINT=""
+/dtbo emmc /dev/block/bootdevice/by-name/dtbo flags=display="dtbo"
+
+#Partition number: 30
+#INFO="Backup partition of dtbo"
+#ID="9BE5CE8F-0708-45B3-B823-5BBEE7EF5437"
+#DEFAULT_SIZE_IN_BYTES="25165824" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde54" DEFAULT_MOUNTPOINT=""
+/dtbobak emmc /dev/block/bootdevice/by-name/dtbobak flags=display="dtbo backup"
+
+#Partition number: 31
+#INFO="unknown"
+#ID="B778F4FE-7020-45EE-98D5-C8985387432C"
+#DEFAULT_SIZE_IN_BYTES="402653184" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda14" DEFAULT_MOUNTPOINT=""
+/exaid emmc /dev/block/bootdevice/by-name/exaid flags=display="exaid"
+
+#Partition number: 32
+#INFO="unknown"
+#ID="F3D793B1-DA84-4A66-B3C0-CEC65CB5FA06"
+#DEFAULT_SIZE_IN_BYTES="8388608" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda16" DEFAULT_MOUNTPOINT=""
+/ffu emmc /dev/block/bootdevice/by-name/ffu flags=display="ffu"
+
+#Partition number: 33
+#INFO="saves state of Factory Reset Protection (FRP), Allow bootloader (OEM) unlocking (Developer Options), asks already associated account info"
+#ID="2C0E8B38-7D01-4337-9294-4B38707779A7"
+#DEFAULT_SIZE_IN_BYTES="524288" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda5" DEFAULT_MOUNTPOINT=""
+/frp emmc /dev/block/bootdevice/by-name/frp flags=display="FRP"
+
+#Partition number: 34
+#INFO="Modem File System Cookie partition"
+#ID="0543ABC7-D7DB-4B00-8B43-7E54FD526EB9"
+#DEFAULT_SIZE_IN_BYTES="131072" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sdf5" DEFAULT_MOUNTPOINT=""
+/fsc emmc /dev/block/bootdevice/by-name/fsc flags=display="FS Cookie"
+
+#Partition number: 35
+#INFO="Modem filesystem golden backup"
+#ID="8CF64402-25C2-40AF-B9EC-23F169675BF1"
+#DEFAULT_SIZE_IN_BYTES="10485760" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sdf4" DEFAULT_MOUNTPOINT=""
+/fsg emmc /dev/block/bootdevice/by-name/fsg flags=display="FS Golden"
+
+#Partition number: 36
+#INFO="unknown"
+#ID="EC7ED95E-E1A0-4120-853E-58773E0D97D4"
+#DEFAULT_SIZE_IN_BYTES="16777216" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda15" DEFAULT_MOUNTPOINT=""
+/gsort emmc /dev/block/bootdevice/by-name/gsort flags=display="gsort"
+
+#Partition number: 37
+#INFO="Virtual Machine Monitor, to enable Virtual Machine platform"
+#ID="4E0B8E84-131A-4D3B-AC46-1B76755E3F6F"
+#DEFAULT_SIZE_IN_BYTES="524288" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde3" DEFAULT_MOUNTPOINT=""
+/hyp emmc /dev/block/bootdevice/by-name/hyp flags=display="Hypervisor"
+
+#Partition number: 38
+#INFO="Backup partition of hyp"
+#ID="0875F477-E2E5-441C-A190-0D5FA7A51906"
+#DEFAULT_SIZE_IN_BYTES="524288" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde19" DEFAULT_MOUNTPOINT=""
+/hypbak emmc /dev/block/bootdevice/by-name/hypbak flags=display="hyp backup"
+
+#Partition number: 39
+#INFO="unknown"
+#ID="DAB62AD8-F1F9-4EF0-A797-0784E75EF005"
+#DEFAULT_SIZE_IN_BYTES="2097152" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde15" DEFAULT_MOUNTPOINT=""
+/imagefv emmc /dev/block/bootdevice/by-name/imagefv flags=display="imagefv"
+
+#Partition number: 40
+#INFO="Backup partition of imagefv"
+#ID="E75F377C-F991-4AF2-99F3-6314D847EA08"
+#DEFAULT_SIZE_IN_BYTES="2097152" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde31" DEFAULT_MOUNTPOINT=""
+/imagefvbak emmc /dev/block/bootdevice/by-name/imagefvbak flags=display="imagefv backup"
+
+#Partition number: 41
+#INFO="verified boot"
+#ID="BD0EC646-5DD0-44D9-8BE4-D7C79BB26B25"
+#DEFAULT_SIZE_IN_BYTES="524288" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde10" DEFAULT_MOUNTPOINT=""
+/keymaster emmc /dev/block/bootdevice/by-name/keymaster flags=display="keymaster"
+
+#Partition number: 42
+#INFO="Backup partition of keymaster"
+#ID="CFEE735D-E329-46D5-93C8-EE11ADFEB8AF"
+#DEFAULT_SIZE_IN_BYTES="524288" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde26" DEFAULT_MOUNTPOINT=""
+/keymasterbak emmc /dev/block/bootdevice/by-name/keymasterbak flags=display="keymaster backup"
+
+#Partition number: 43
+#INFO="related to /data Full Disc Encryption (FDE)"
+#ID="2BF58D3A-7781-449D-BEC8-9D4EBB3C22BA"
+#DEFAULT_SIZE_IN_BYTES="524288" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda4" DEFAULT_MOUNTPOINT=""
+/keystore emmc /dev/block/bootdevice/by-name/keystore flags=display="keystore"
+
+#Partition number: 44
+#INFO="Qualcomm Limits Management Hardware (LMh) driver in SBL writes the data in this partition to use for later reboots"
+#ID="41B98F46-D2E7-4CF6-B2F2-7C4F6B72FBBF"
+#DEFAULT_SIZE_IN_BYTES="4096" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde38" DEFAULT_MOUNTPOINT=""
+/limits emmc /dev/block/bootdevice/by-name/limits flags=display="limits"
+
+#Partition number: 45
+#INFO="unknown"
+#ID="AB7CAB71-0800-4C4A-832E-C50655E5D8E1"
+#DEFAULT_SIZE_IN_BYTES="67108864" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde42" DEFAULT_MOUNTPOINT=""
+/logdump emmc /dev/block/bootdevice/by-name/logdump flags=display="logdump"
+
+#Partition number: 46
+#INFO="unknown"
+#ID="571B4254-5F82-4303-983F-B2D617529699"
+#DEFAULT_SIZE_IN_BYTES="8388608" DEFAULT_FORMAT="vfat"
+#DEFAULT_LABEL="LOGFS" CAN_BE_MOUNTED="true"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="true"
+#MMC_BLOCK="/dev/block/sde40" DEFAULT_MOUNTPOINT="/LOGFS"
+/LOGFS vfat /dev/block/bootdevice/by-name/logfs flags=display="logfs"
+
+#Partition number: 46 (custom emmc format)
+#INFO="EMMC image of LOGFS partition"
+#ID="860AFA60-EF5D-4277-B74D-8E16E7D9768E"
+#DEFAULT_SIZE_IN_BYTES="8388608" DEFAULT_FORMAT="unknown"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde40" DEFAULT_MOUNTPOINT="unknown"
+/LOGFS_image emmc /dev/block/bootdevice/by-name/logfs flags=display="LOGFS Image";flashimg=1
+
+#Partition number: 47
+#INFO="boot verification, use Qualcomm SafeSwitch technology to lock and track theft phones"
+#ID="99E391C9-F352-462D-B2BD-A53AE75FE025"
+#DEFAULT_SIZE_IN_BYTES="33554432" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde7" DEFAULT_MOUNTPOINT=""
+/mdtp emmc /dev/block/bootdevice/by-name/mdtp flags=display="mdtp"
+
+#Partition number: 48
+#INFO="Backup partition of mdtp"
+#ID="BD6323A6-AF44-41D3-8A10-59BC0A4758D5"
+#DEFAULT_SIZE_IN_BYTES="33554432" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde23" DEFAULT_MOUNTPOINT=""
+/mdtpbak emmc /dev/block/bootdevice/by-name/mdtpbak flags=display="mdtp backup"
+
+#Partition number: 49
+#INFO="unknown"
+#ID="8495D0F5-FC16-4635-84BD-17C99A587816"
+#DEFAULT_SIZE_IN_BYTES="4194304" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde6" DEFAULT_MOUNTPOINT=""
+/mdtpsecapp emmc /dev/block/bootdevice/by-name/mdtpsecapp flags=display="mdtpsecapp"
+
+#Partition number: 50
+#INFO="Backup partition of mdtpsecapp"
+#ID="F264A8DF-804A-452A-849D-04DDE4671E6A"
+#DEFAULT_SIZE_IN_BYTES="4194304" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde22" DEFAULT_MOUNTPOINT=""
+/mdtpsecappbak emmc /dev/block/bootdevice/by-name/mdtpsecappbak flags=display="mdtpsecapp backup"
+
+#Partition number: 51
+#INFO="The metadata partition is used when device is encrypted and is 16MB or larger."
+#ID="617C98FF-D1C0-467E-B6B3-77494F2B7ACC"
+#DEFAULT_SIZE_IN_BYTES="16777216" DEFAULT_FORMAT="ext4"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="true"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="true"
+#MMC_BLOCK="/dev/block/sda12" DEFAULT_MOUNTPOINT="/metadata"
+/metadata ext4 /dev/block/bootdevice/by-name/metadata flags=display="metadata"
+
+#Partition number: 51 (custom emmc format)
+#INFO="EMMC image of metadata partition"
+#ID="B767A66B-97AA-49E6-B9AA-122031E797CA"
+#DEFAULT_SIZE_IN_BYTES="16777216" DEFAULT_FORMAT="unknown"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda12" DEFAULT_MOUNTPOINT="unknown"
+/metadata_image emmc /dev/block/bootdevice/by-name/metadata flags=display="Metadata Image";flashimg=1
+
+#Partition number: 52
+#INFO="unknown"
+#ID="F8E0D58D-1469-4C75-8C32-C48D3E2A3E55"
+#DEFAULT_SIZE_IN_BYTES="134217728" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda6" DEFAULT_MOUNTPOINT=""
+/minidump emmc /dev/block/bootdevice/by-name/minidump flags=display="minidump"
+
+#Partition number: 53
+#INFO="boot mode selector used to pass data among various stages of the boot chain (boot into recovery mode, fastboot etc.). e.g. if it is empty (all zero), system boots normally. If it contains recovery mode selector, system boots into recovery mode."
+#ID="12ACE293-0F53-4F36-AE80-A45EF069E535"
+#DEFAULT_SIZE_IN_BYTES="1048576" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda3" DEFAULT_MOUNTPOINT="/misc"
+/misc emmc /dev/block/bootdevice/by-name/misc flags=display="misc"
+
+#Partition number: 54
+#INFO="radio partition, responsible for signals and on older devices may control wifi, bluetooth, and GPS"
+#ID="3B5C4807-C84A-4A4A-A281-4215DD32C9D4"
+#DEFAULT_SIZE_IN_BYTES="268435456" DEFAULT_FORMAT="vfat"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="true"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="true"
+#MMC_BLOCK="/dev/block/sde4" DEFAULT_MOUNTPOINT="/vendor/firmware_mnt"
+/firmware vfat /dev/block/bootdevice/by-name/modem flags=display="Modem FW";mounttodecrypt;backup=1
+
+#Partition number: 54 (custom emmc format)
+#INFO="EMMC image of firmware partition"
+#ID="79F62186-566B-48A0-AE50-D7BFEC22D41B"
+#DEFAULT_SIZE_IN_BYTES="268435456" DEFAULT_FORMAT="unknown"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde4" DEFAULT_MOUNTPOINT="unknown"
+/firmware_image emmc /dev/block/bootdevice/by-name/modem flags=display="Firmware Image";flashimg=1
+
+#Partition number: 55
+#INFO="Backup partition of modem"
+#ID="FB0110F9-2D31-4341-A985-BD4387DD119E"
+#DEFAULT_SIZE_IN_BYTES="268435456" DEFAULT_FORMAT="vfat"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="true"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="true"
+#MMC_BLOCK="/dev/block/sde20" DEFAULT_MOUNTPOINT=""
+/modembak vfat /dev/block/bootdevice/by-name/modembak flags=display="modem backup"
+
+#Partition number: 55 (custom emmc format)
+#INFO="EMMC image of modembak partition"
+#ID="D72F037A-F1C5-4F09-A9BE-A2B4C1D654B7"
+#DEFAULT_SIZE_IN_BYTES="268435456" DEFAULT_FORMAT="unknown"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde20" DEFAULT_MOUNTPOINT="unknown"
+/modembak_image emmc /dev/block/bootdevice/by-name/modembak flags=display="Modembak Image";flashimg=1
+
+#Partition number: 56
+#INFO="modem storage 1"
+#ID="1C609C80-7D1D-4066-9EC6-86098058BB28"
+#DEFAULT_SIZE_IN_BYTES="2097152" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sdf2" DEFAULT_MOUNTPOINT=""
+/modemst1 emmc /dev/block/bootdevice/by-name/modemst1 flags=display="Modem Storage 1"
+
+#Partition number: 57
+#INFO="modem storage 2"
+#ID="C74EF5F1-8C10-4E1D-87F3-15CD28B7BF0E"
+#DEFAULT_SIZE_IN_BYTES="2097152" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sdf3" DEFAULT_MOUNTPOINT=""
+/modemst2 emmc /dev/block/bootdevice/by-name/modemst2 flags=display="Modem Storage 2"
+
+#Partition number: 58
+#INFO="unknown"
+#ID="DBBC74A5-33DE-4C15-8F3B-602CE42BBF49"
+#DEFAULT_SIZE_IN_BYTES="32768" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde44" DEFAULT_MOUNTPOINT=""
+/multiimgoem emmc /dev/block/bootdevice/by-name/multiimgoem flags=display="multiimgoem"
+
+#Partition number: 59
+#INFO="unknown"
+#ID="D849529A-009D-48B9-AF2C-677F15804FFD"
+#DEFAULT_SIZE_IN_BYTES="32768" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde45" DEFAULT_MOUNTPOINT=""
+/multiimgqti emmc /dev/block/bootdevice/by-name/multiimgqti flags=display="multiimgqti"
+
+#Partition number: 60
+#INFO="contains data which shouldn't be changed after the device is shipped, e.g. DRM related files, sensor reg file (sns.reg) and calibration data of chips; wifi, bluetooth, camera etc."
+#ID="79EDE598-C583-4710-9345-8BFFC5E8E473"
+#DEFAULT_SIZE_IN_BYTES="33554432" DEFAULT_FORMAT="ext4"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="true"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="true"
+#MMC_BLOCK="/dev/block/sda2" DEFAULT_MOUNTPOINT="/mnt/vendor/persist"
+/persist ext4 /dev/block/bootdevice/by-name/persist flags=display="persist";backup=1
+
+#Partition number: 60 (custom emmc format)
+#INFO="EMMC image of persist partition"
+#ID="6BDCBC7C-E53F-4655-AFF9-A5C233769A8A"
+#DEFAULT_SIZE_IN_BYTES="33554432" DEFAULT_FORMAT="unknown"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda2" DEFAULT_MOUNTPOINT="unknown"
+/persist_image emmc /dev/block/bootdevice/by-name/persist flags=display="Persist Image";flashimg=1
+
+#Partition number: 61
+#INFO="unknown"
+#ID="6862F445-BC73-4F28-8F13-724C9365F972"
+#DEFAULT_SIZE_IN_BYTES="65536" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde14" DEFAULT_MOUNTPOINT=""
+/qupfw emmc /dev/block/bootdevice/by-name/qupfw flags=display="qupfw"
+
+#Partition number: 62
+#INFO="Backup partition of qupfw"
+#ID="7641377C-D78A-4609-9399-5962B1095A3E"
+#DEFAULT_SIZE_IN_BYTES="65536" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde30" DEFAULT_MOUNTPOINT=""
+/qupfwbak emmc /dev/block/bootdevice/by-name/qupfwbak flags=display="qupfw backup"
+
+#Partition number: 63
+#INFO="Holds alternate boot partition and the recovery program that lets the device boot into a recovery console for performing advanced recovery and maintenance operations."
+#ID="F2CC0061-BB2C-41C9-8489-5CB9E5B4538E"
+#DEFAULT_SIZE_IN_BYTES="134217728" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda8" DEFAULT_MOUNTPOINT=""
+/recovery emmc /dev/block/bootdevice/by-name/recovery flags=display="Recovery";backup=1;flashimg=1
+
+#Partition number: 64
+#INFO="Backup partition of recovery"
+#ID="F5E5AD24-DA6B-4556-928A-DDC35D448044"
+#DEFAULT_SIZE_IN_BYTES="134217728" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda9" DEFAULT_MOUNTPOINT=""
+/recoverybak emmc /dev/block/bootdevice/by-name/recoverybak flags=display="recovery backup"
+
+#Partition number: 65
+#INFO="unknown"
+#ID="859BB1B8-F6C3-4FD6-ADF5-36630D0B6F1C"
+#DEFAULT_SIZE_IN_BYTES="28672" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde47" DEFAULT_MOUNTPOINT=""
+/secdata emmc /dev/block/bootdevice/by-name/secdata flags=display="secdata"
+
+#Partition number: 66
+#INFO="splash image or boot logo which appears when device boots (at ABOOT stage)."
+#ID="5248B0B8-ADC6-43C0-A8B1-FC5880E0B383"
+#DEFAULT_SIZE_IN_BYTES="34226176" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde37" DEFAULT_MOUNTPOINT=""
+/splash emmc /dev/block/bootdevice/by-name/splash flags=display="Boot Logo";backup=1;flashimg=1
+
+#Partition number: 67
+#INFO="unknown"
+#ID="9E160C81-3100-417F-B845-65CF17DA3C58"
+#DEFAULT_SIZE_IN_BYTES="8388608" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde36" DEFAULT_MOUNTPOINT=""
+/spunvm emmc /dev/block/bootdevice/by-name/spunvm flags=display="spunvm"
+
+#Partition number: 68
+#INFO="Secure Software Download, a memory based file system for secure storage, stores some encrypted RSA keys"
+#ID="14BE0257-D149-4EE4-A39E-684409080AA8"
+#DEFAULT_SIZE_IN_BYTES="8192" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda1" DEFAULT_MOUNTPOINT=""
+/ssd emmc /dev/block/bootdevice/by-name/ssd flags=display="Secure Software Download"
+
+#Partition number: 69
+#INFO="unknown"
+#ID="0F618237-BB01-4867-9CDE-B765066B39D9"
+#DEFAULT_SIZE_IN_BYTES="131072" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde43" DEFAULT_MOUNTPOINT=""
+/storsec emmc /dev/block/bootdevice/by-name/storsec flags=display="storsec";backup=1;flashimg=1
+
+#Partition number: 70
+#INFO="unknown"
+#ID="46254F91-9C69-408E-89EA-E58A9D56290B"
+#DEFAULT_SIZE_IN_BYTES="8589934592" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda17" DEFAULT_MOUNTPOINT=""
+/super emmc /dev/block/bootdevice/by-name/super flags=display="super"
+
+#Partition number: 71
+#INFO="unknown"
+#ID="ECE1905F-1FDE-42EA-8C7E-81A96D9D3D91"
+#DEFAULT_SIZE_IN_BYTES="1048576" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde39" DEFAULT_MOUNTPOINT=""
+/toolsfv emmc /dev/block/bootdevice/by-name/toolsfv flags=display="ToolsFV"
+
+#Partition number: 72
+#INFO="TZ (TrustZone) - used by ARM processors as an additional lock to security features"
+#ID="ACBB9ADC-4281-4610-81FE-9BDB23FE396F"
+#DEFAULT_SIZE_IN_BYTES="4194304" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde2" DEFAULT_MOUNTPOINT=""
+/tz emmc /dev/block/bootdevice/by-name/tz flags=display="TrustZone";backup=1;flashimg=1
+
+#Partition number: 73
+#INFO="Backup partition of tz"
+#ID="399D8A1A-C7FB-4779-9891-C73B30307F70"
+#DEFAULT_SIZE_IN_BYTES="4194304" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde18" DEFAULT_MOUNTPOINT=""
+/tzbak emmc /dev/block/bootdevice/by-name/tzbak flags=display="tz backup"
+
+#Partition number: 74
+#INFO="unknown"
+#ID="5CFABA20-D703-4BF1-A750-84F97E8EE16B"
+#DEFAULT_SIZE_IN_BYTES="2097152" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde16" DEFAULT_MOUNTPOINT=""
+/uefisecapp emmc /dev/block/bootdevice/by-name/uefisecapp flags=display="uefisecapp"
+
+#Partition number: 75
+#INFO="Backup partition of uefisecapp"
+#ID="B47A76CB-12AE-4EC3-9DDD-330D4C0982AC"
+#DEFAULT_SIZE_IN_BYTES="2097152" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde32" DEFAULT_MOUNTPOINT=""
+/uefisecappbak emmc /dev/block/bootdevice/by-name/uefisecappbak flags=display="uefisecapp backup"
+
+#Partition number: 76
+#INFO="unknown"
+#ID="CF677190-7732-4FFE-AB21-263BD6569244"
+#DEFAULT_SIZE_IN_BYTES="524288" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde46" DEFAULT_MOUNTPOINT=""
+/uefivarstore emmc /dev/block/bootdevice/by-name/uefivarstore flags=display="uefivarstore"
+
+#Partition number: 77
+#INFO="unknown"
+#ID="E87AF14A-6EC3-4C70-9D35-4ED8522F9CF4"
+#DEFAULT_SIZE_IN_BYTES="112421842944" DEFAULT_FORMAT="f2fs"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="true"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="true"
+#MMC_BLOCK="/dev/block/sda18" DEFAULT_MOUNTPOINT="/data"
+/data f2fs /dev/block/bootdevice/by-name/userdata flags=display="Userdata";backup=1
+
+#Partition number: 77 (custom emmc format)
+#INFO="EMMC image of data partition"
+#ID="58E57FC5-02E2-475A-B563-C1D88F20D035"
+#DEFAULT_SIZE_IN_BYTES="112421842944" DEFAULT_FORMAT="unknown"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda18" DEFAULT_MOUNTPOINT="unknown"
+/data_image emmc /dev/block/bootdevice/by-name/userdata flags=display="Data Image";flashimg=1
+
+#Partition number: 78
+#INFO="The top-level object for verified boot."
+#ID="B260AA23-659C-4031-A1BF-4ECA70ADDCE1"
+#DEFAULT_SIZE_IN_BYTES="65536" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde50" DEFAULT_MOUNTPOINT=""
+/vbmeta emmc /dev/block/bootdevice/by-name/vbmeta flags=display="VB Metadata"
+
+#Partition number: 79
+#INFO="unknown"
+#ID="BFEE0443-9543-4813-AFD0-D15019DAB10B"
+#DEFAULT_SIZE_IN_BYTES="65536" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda10" DEFAULT_MOUNTPOINT=""
+/vbmeta_system emmc /dev/block/bootdevice/by-name/vbmeta_system flags=display="vbmeta_system"
+
+#Partition number: 80
+#INFO="Backup partition of vbmeta_system"
+#ID="0EF01BCB-3008-46F1-A2D2-18BBC44B20E6"
+#DEFAULT_SIZE_IN_BYTES="65536" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sda11" DEFAULT_MOUNTPOINT=""
+/vbmeta_systembak emmc /dev/block/bootdevice/by-name/vbmeta_systembak flags=display="vbmeta_system backup"
+
+#Partition number: 81
+#INFO="Backup partition of vbmeta"
+#ID="9750E60A-194D-474E-8027-C5AFD236FE53"
+#DEFAULT_SIZE_IN_BYTES="65536" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sde53" DEFAULT_MOUNTPOINT=""
+/vbmetabak emmc /dev/block/bootdevice/by-name/vbmetabak flags=display="vbmeta backup"
+
+#Partition number: 82
+#INFO="Qualcomm's eXtensible Bootloader"
+#ID="F042DB4A-AC84-41D6-B80D-671042A8496D"
+#DEFAULT_SIZE_IN_BYTES="7340032" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sdb1" DEFAULT_MOUNTPOINT=""
+/xbl emmc /dev/block/bootdevice/by-name/xbl flags=display="eXtensible BL";backup=1;flashimg=1
+
+#Partition number: 83
+#INFO="unknown"
+#ID="0800CB98-DADC-417F-B3C7-DB0EEC09D5A9"
+#DEFAULT_SIZE_IN_BYTES="131072" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sdb2" DEFAULT_MOUNTPOINT=""
+/xbl_config emmc /dev/block/bootdevice/by-name/xbl_config flags=display="xbl_config"
+
+#Partition number: 84
+#INFO="Backup partition of xbl_config"
+#ID="D146A44F-1DE3-4D58-97E0-8ED00B827797"
+#DEFAULT_SIZE_IN_BYTES="131072" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sdc2" DEFAULT_MOUNTPOINT=""
+/xbl_configbak emmc /dev/block/bootdevice/by-name/xbl_configbak flags=display="xbl_config backup"
+
+#Partition number: 85
+#INFO="Backup partition of xbl"
+#ID="3B368CC9-AB87-47AA-B0FF-A255E6BD2535"
+#DEFAULT_SIZE_IN_BYTES="7340032" DEFAULT_FORMAT="emmc"
+#DEFAULT_LABEL="unknown" CAN_BE_MOUNTED="false"
+#BLOCK_SIZE="4096" PARTITION_HAVE_UUID="false"
+#MMC_BLOCK="/dev/block/sdc1" DEFAULT_MOUNTPOINT=""
+/xblbak emmc /dev/block/bootdevice/by-name/xblbak flags=display="xbl backup"
+
+#VoldManaged volumes:
+#Total number of VoldManaged volumes: 3
+
+#VoldManaged volume number: 1
+#INFO="External SD card"
+#ID="0C81CCCD-3FEF-4F8E-8BD3-952516855C9A"
+#DEFAULT_MOUNTPOINT="/storage/sdcard1"
+/sdcard1 vfat /devices/platform/soc/8804000.sdhci/mmc_host* flags=display="ExternalSD";storage;wipeingui;removable;voldmanaged=sdcard1:auto;encryptable=footer
+
+#VoldManaged volume number: 2
+#INFO="External SD card"
+#ID="46DACB63-EEE4-4641-AF80-CDC3668C0015"
+#DEFAULT_MOUNTPOINT="/storage/sdcard1"
+/sdcard1 vfat /devices/platform/soc/1da4000.ufshc_card/host* flags=display="ExternalSD";storage;wipeingui;removable;voldmanaged=sdcard1:auto;encryptable=footer
+
+#VoldManaged volume number: 3
+#INFO="Universal Serial Bus On-The-Go (USB OTG)"
+#ID="0A96C417-CF6B-4152-B3B7-05B2F1C9B79D"
+#DEFAULT_MOUNTPOINT="/storage/usbotg"
+/usbotg vfat /devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.0.auto* flags=display="USB Storage";storage;wipeingui;removable;voldmanaged=usbotg:auto
+

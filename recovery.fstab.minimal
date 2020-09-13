@@ -1,0 +1,116 @@
+#
+# Copyright (C) 2020 ATGDroid <bythedroid@gmail.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+/ALIGN_TO_128K_1 emmc /dev/block/bootdevice/by-name/ALIGN_TO_128K_1 flags=display="ALIGN_TO_128K_1"
+/ALIGN_TO_128K_2 emmc /dev/block/bootdevice/by-name/ALIGN_TO_128K_2 flags=display="ALIGN_TO_128K_2"
+/abl emmc /dev/block/bootdevice/by-name/abl flags=display="aboot BL"
+/ablbak emmc /dev/block/bootdevice/by-name/ablbak flags=display="abl backup"
+/aop emmc /dev/block/bootdevice/by-name/aop flags=display="aop"
+/aopbak emmc /dev/block/bootdevice/by-name/aopbak flags=display="aop backup"
+/apdp emmc /dev/block/bootdevice/by-name/apdp flags=display="apdp"
+/bt_firmware vfat /dev/block/bootdevice/by-name/bluetooth flags=display="Bluetooth FW";mounttodecrypt;backup=1
+/bt_firmware_image emmc /dev/block/bootdevice/by-name/bluetooth flags=display="Bluetooth FW Image";flashimg=1
+/bluetoothbak vfat /dev/block/bootdevice/by-name/bluetoothbak flags=display="bluetooth backup"
+/bluetoothbak_image emmc /dev/block/bootdevice/by-name/bluetoothbak flags=display="Bluetoothbak Image";flashimg=1
+/boot emmc /dev/block/bootdevice/by-name/boot flags=display="boot";backup=1;flashimg=1
+/bootbak emmc /dev/block/bootdevice/by-name/bootbak flags=display="boot backup"
+/cache ext4 /dev/block/bootdevice/by-name/cache flags=display="cache"
+/cache_image emmc /dev/block/bootdevice/by-name/cache flags=display="Cache Image";flashimg=1
+/catecontentfv emmc /dev/block/bootdevice/by-name/catecontentfv flags=display="catecontentfv"
+/catefv emmc /dev/block/bootdevice/by-name/catefv flags=display="catefv"
+/cateloader emmc /dev/block/bootdevice/by-name/cateloader flags=display="cateloader"
+/cdt emmc /dev/block/bootdevice/by-name/cdt flags=display="cdt"
+/cmnlib emmc /dev/block/bootdevice/by-name/cmnlib flags=display="cmnlib"
+/cmnlib64 emmc /dev/block/bootdevice/by-name/cmnlib64 flags=display="cmnlib64"
+/cmnlib64bak emmc /dev/block/bootdevice/by-name/cmnlib64bak flags=display="cmnlib64 backup"
+/cmnlibbak emmc /dev/block/bootdevice/by-name/cmnlibbak flags=display="cmnlib backup"
+/cust ext4 /dev/block/bootdevice/by-name/cust flags=display="cust";backup=1;wipeingui
+/cust_image emmc /dev/block/bootdevice/by-name/cust flags=display="Cust Image";flashimg=1
+/ddr emmc /dev/block/bootdevice/by-name/ddr flags=display="DDR"
+/devcfg emmc /dev/block/bootdevice/by-name/devcfg flags=display="devcfg"
+/devcfgbak emmc /dev/block/bootdevice/by-name/devcfgbak flags=display="devcfg backup"
+/devinfo emmc /dev/block/bootdevice/by-name/devinfo flags=display="Device Info"
+/dip emmc /dev/block/bootdevice/by-name/dip flags=display="dip"
+/dsp ext4 /dev/block/bootdevice/by-name/dsp flags=display="Dsp FW";backup=1
+/dsp_image emmc /dev/block/bootdevice/by-name/dsp flags=display="Dsp Image";flashimg=1
+/dsp ext4 /dev/block/bootdevice/by-name/dspbak flags=display="dsp backup"
+/dsp_image emmc /dev/block/bootdevice/by-name/dspbak flags=display="Dsp Image";flashimg=1
+/dtbo emmc /dev/block/bootdevice/by-name/dtbo flags=display="dtbo"
+/dtbobak emmc /dev/block/bootdevice/by-name/dtbobak flags=display="dtbo backup"
+/exaid emmc /dev/block/bootdevice/by-name/exaid flags=display="exaid"
+/ffu emmc /dev/block/bootdevice/by-name/ffu flags=display="ffu"
+/frp emmc /dev/block/bootdevice/by-name/frp flags=display="FRP"
+/fsc emmc /dev/block/bootdevice/by-name/fsc flags=display="FS Cookie"
+/fsg emmc /dev/block/bootdevice/by-name/fsg flags=display="FS Golden"
+/gsort emmc /dev/block/bootdevice/by-name/gsort flags=display="gsort"
+/hyp emmc /dev/block/bootdevice/by-name/hyp flags=display="Hypervisor"
+/hypbak emmc /dev/block/bootdevice/by-name/hypbak flags=display="hyp backup"
+/imagefv emmc /dev/block/bootdevice/by-name/imagefv flags=display="imagefv"
+/imagefvbak emmc /dev/block/bootdevice/by-name/imagefvbak flags=display="imagefv backup"
+/keymaster emmc /dev/block/bootdevice/by-name/keymaster flags=display="keymaster"
+/keymasterbak emmc /dev/block/bootdevice/by-name/keymasterbak flags=display="keymaster backup"
+/keystore emmc /dev/block/bootdevice/by-name/keystore flags=display="keystore"
+/limits emmc /dev/block/bootdevice/by-name/limits flags=display="limits"
+/logdump emmc /dev/block/bootdevice/by-name/logdump flags=display="logdump"
+/LOGFS vfat /dev/block/bootdevice/by-name/logfs flags=display="logfs"
+/LOGFS_image emmc /dev/block/bootdevice/by-name/logfs flags=display="LOGFS Image";flashimg=1
+/mdtp emmc /dev/block/bootdevice/by-name/mdtp flags=display="mdtp"
+/mdtpbak emmc /dev/block/bootdevice/by-name/mdtpbak flags=display="mdtp backup"
+/mdtpsecapp emmc /dev/block/bootdevice/by-name/mdtpsecapp flags=display="mdtpsecapp"
+/mdtpsecappbak emmc /dev/block/bootdevice/by-name/mdtpsecappbak flags=display="mdtpsecapp backup"
+/metadata ext4 /dev/block/bootdevice/by-name/metadata flags=display="metadata"
+/metadata_image emmc /dev/block/bootdevice/by-name/metadata flags=display="Metadata Image";flashimg=1
+/minidump emmc /dev/block/bootdevice/by-name/minidump flags=display="minidump"
+/misc emmc /dev/block/bootdevice/by-name/misc flags=display="misc"
+/firmware vfat /dev/block/bootdevice/by-name/modem flags=display="Modem FW";mounttodecrypt;backup=1
+/firmware_image emmc /dev/block/bootdevice/by-name/modem flags=display="Firmware Image";flashimg=1
+/modembak vfat /dev/block/bootdevice/by-name/modembak flags=display="modem backup"
+/modembak_image emmc /dev/block/bootdevice/by-name/modembak flags=display="Modembak Image";flashimg=1
+/modemst1 emmc /dev/block/bootdevice/by-name/modemst1 flags=display="Modem Storage 1"
+/modemst2 emmc /dev/block/bootdevice/by-name/modemst2 flags=display="Modem Storage 2"
+/multiimgoem emmc /dev/block/bootdevice/by-name/multiimgoem flags=display="multiimgoem"
+/multiimgqti emmc /dev/block/bootdevice/by-name/multiimgqti flags=display="multiimgqti"
+/persist ext4 /dev/block/bootdevice/by-name/persist flags=display="persist";backup=1
+/persist_image emmc /dev/block/bootdevice/by-name/persist flags=display="Persist Image";flashimg=1
+/qupfw emmc /dev/block/bootdevice/by-name/qupfw flags=display="qupfw"
+/qupfwbak emmc /dev/block/bootdevice/by-name/qupfwbak flags=display="qupfw backup"
+/recovery emmc /dev/block/bootdevice/by-name/recovery flags=display="Recovery";backup=1;flashimg=1
+/recoverybak emmc /dev/block/bootdevice/by-name/recoverybak flags=display="recovery backup"
+/secdata emmc /dev/block/bootdevice/by-name/secdata flags=display="secdata"
+/splash emmc /dev/block/bootdevice/by-name/splash flags=display="Boot Logo";backup=1;flashimg=1
+/spunvm emmc /dev/block/bootdevice/by-name/spunvm flags=display="spunvm"
+/ssd emmc /dev/block/bootdevice/by-name/ssd flags=display="Secure Software Download"
+/storsec emmc /dev/block/bootdevice/by-name/storsec flags=display="storsec";backup=1;flashimg=1
+/super emmc /dev/block/bootdevice/by-name/super flags=display="super"
+/toolsfv emmc /dev/block/bootdevice/by-name/toolsfv flags=display="ToolsFV"
+/tz emmc /dev/block/bootdevice/by-name/tz flags=display="TrustZone";backup=1;flashimg=1
+/tzbak emmc /dev/block/bootdevice/by-name/tzbak flags=display="tz backup"
+/uefisecapp emmc /dev/block/bootdevice/by-name/uefisecapp flags=display="uefisecapp"
+/uefisecappbak emmc /dev/block/bootdevice/by-name/uefisecappbak flags=display="uefisecapp backup"
+/uefivarstore emmc /dev/block/bootdevice/by-name/uefivarstore flags=display="uefivarstore"
+/data f2fs /dev/block/bootdevice/by-name/userdata flags=display="Userdata";backup=1
+/data_image emmc /dev/block/bootdevice/by-name/userdata flags=display="Data Image";flashimg=1
+/vbmeta emmc /dev/block/bootdevice/by-name/vbmeta flags=display="VB Metadata"
+/vbmeta_system emmc /dev/block/bootdevice/by-name/vbmeta_system flags=display="vbmeta_system"
+/vbmeta_systembak emmc /dev/block/bootdevice/by-name/vbmeta_systembak flags=display="vbmeta_system backup"
+/vbmetabak emmc /dev/block/bootdevice/by-name/vbmetabak flags=display="vbmeta backup"
+/xbl emmc /dev/block/bootdevice/by-name/xbl flags=display="eXtensible BL";backup=1;flashimg=1
+/xbl_config emmc /dev/block/bootdevice/by-name/xbl_config flags=display="xbl_config"
+/xbl_configbak emmc /dev/block/bootdevice/by-name/xbl_configbak flags=display="xbl_config backup"
+/xblbak emmc /dev/block/bootdevice/by-name/xblbak flags=display="xbl backup"
+/sdcard1 vfat /devices/platform/soc/8804000.sdhci/mmc_host* flags=display="ExternalSD";storage;wipeingui;removable;voldmanaged=sdcard1:auto;encryptable=footer
+/sdcard1 vfat /devices/platform/soc/1da4000.ufshc_card/host* flags=display="ExternalSD";storage;wipeingui;removable;voldmanaged=sdcard1:auto;encryptable=footer
+/usbotg vfat /devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.0.auto* flags=display="USB Storage";storage;wipeingui;removable;voldmanaged=usbotg:auto

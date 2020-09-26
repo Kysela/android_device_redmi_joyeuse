@@ -17,7 +17,7 @@
 LOCAL_PATH := $(call my-dir)
 TG_CHANNEL_LINK := https://t.me/ATGDroid
 BOARD_VENDOR := xiaomi
-BOARD_DEVICE := joyeuse
+BOARD_DEVICE := $(TARGET_DEVICE)
 DEVICE_TREE := device/$(BOARD_VENDOR)/$(BOARD_DEVICE)
 
 ifneq ($(filter joyeuse,$(BOARD_DEVICE)),)

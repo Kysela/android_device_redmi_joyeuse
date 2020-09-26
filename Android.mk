@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 TG_CHANNEL_LINK := https://t.me/ATGDroid
-BOARD_VENDOR := redmi
+BOARD_VENDOR := xiaomi
 BOARD_DEVICE := joyeuse
 DEVICE_TREE := device/$(BOARD_VENDOR)/$(BOARD_DEVICE)
 

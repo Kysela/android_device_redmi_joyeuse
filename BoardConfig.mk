@@ -14,7 +14,8 @@
 # limitations under the License.
 #
 
-TW_DEVICE_VERSION := 1 ($(TG_CHANNEL_LINK))
+TW_DEVICE_VERSION := 1 (https://t.me/ATGDroid)
+DEVICE_TREE := device/xiaomi/joyeuse
 ALLOW_MISSING_DEPENDENCIES := true
 
 # Architecture

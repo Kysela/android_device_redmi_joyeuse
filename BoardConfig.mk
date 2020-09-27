@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-TW_DEVICE_VERSION := 1 (https://t.me/ATGDroid)
+TW_DEVICE_VERSION := 1
 DEVICE_TREE := device/xiaomi/joyeuse
 ALLOW_MISSING_DEPENDENCIES := true
 
